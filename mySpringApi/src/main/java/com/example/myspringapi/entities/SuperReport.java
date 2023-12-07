@@ -1,17 +1,22 @@
 package com.example.myspringapi.entities;
 
-import javax.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
 
 @Entity
 @Table(name="SuperReport")
 public class SuperReport {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long heroId;
+    public int id;
     @Column(name="postal_code")
-    private String postalCode;
+    public String postalCode;
     @Column(name="street_address")
-    private String streetAddress;
+    public String streetAddress;
     protected SuperReport() {}
 
     public SuperReport(String firstName, String lastName) {
@@ -23,16 +28,16 @@ public class SuperReport {
     public String toString() {
         return String.format(
                 "Super Hero[id=%d, firstName='%s', lastName='%s', superPower='%s']",
-                heroId, postalCode, streetAddress);
+                id, postalCode, streetAddress);
     }
 
     // Getters and setters for each field
-    public Long getHeroId() {
-        return heroId;
+    public int getId() {
+        return id;
     }
 
-    public void setHeroId(Long heroId) {
-        this.heroId = heroId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getPostalCode() {

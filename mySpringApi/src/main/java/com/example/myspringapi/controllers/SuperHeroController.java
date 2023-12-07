@@ -28,12 +28,12 @@ public class SuperHeroController {
     }
 
     @GetMapping("superHero/{id}")
-    public Optional<SuperHero> getSuperHeroById(@PathVariable("id") Long id) {
+    public Optional<SuperHero> getSuperHeroById(@PathVariable("id") int id) {
         return superHeroRepository.findById(id);
     }
 
     @GetMapping("superReport/{id}")
-    public Optional<SuperReport> getSuperReportById(@PathVariable("id") Long id) {
+    public Optional<SuperReport> getSuperReportById(@PathVariable("id") int id) {
         return superReportRepository.findById(id);
     }
 

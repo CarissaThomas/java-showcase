@@ -1,5 +1,11 @@
 package com.example.myspringapi.entities;
-import javax.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
+
 
 @Entity
 @Table(name="SuperHero")
@@ -7,13 +13,13 @@ public class SuperHero {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long heroId;
+    public int id;
     @Column(name="first_name")
-    private String firstName;
+    public String firstName;
     @Column(name="last_name")
-    private String lastName;
+    public String lastName;
     @Column(name="super_power")
-    private String superPower;
+    public String superPower;
 
     // No-argument constructor required by JPA
     protected SuperHero() {
@@ -27,12 +33,12 @@ public class SuperHero {
     }
 
     // Getters and setters for each field
-    public Long getHeroId() {
-        return heroId;
+    public int getId() {
+        return id;
     }
 
-    public void setHeroId(Long heroId) {
-        this.heroId = heroId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {

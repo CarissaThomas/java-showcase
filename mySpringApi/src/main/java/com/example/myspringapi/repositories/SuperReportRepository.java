@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SuperReportRepository extends CrudRepository<SuperReport, Long> {
+public interface SuperReportRepository extends CrudRepository<SuperReport, Integer> {
 
 }
