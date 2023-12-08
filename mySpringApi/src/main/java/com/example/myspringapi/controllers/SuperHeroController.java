@@ -7,6 +7,7 @@ import com.example.myspringapi.repositories.SuperReportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -27,7 +28,12 @@ public class SuperHeroController {
         return superHeroes;
     }
 
-    @GetMapping("superHero/{id}")
+    @GetMapping("superHero/{firstName}")
+    public List<SuperHero> getSuperHeroByFirstName(@PathVariable("firstName") String firstName) {
+        return superHeroRepository.findSuperHeroesByFirstName(firstName);
+    }
+
+    @GetMapping("superHero/firstName/{id}")
     public Optional<SuperHero> getSuperHeroById(@PathVariable("id") int id) {
         return superHeroRepository.findById(id);
     }
