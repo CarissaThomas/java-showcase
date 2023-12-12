@@ -1,4 +1,4 @@
-package com.example.camelmicroservice1;
+package com.example.camelmicroservice1.routes;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
